@@ -1,0 +1,660 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Resume</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5b75deae-5399-4393-be1a-78e087ded2db" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Resume%205b75deae53994393be1a78e087ded2db/photo_2021-03-17_13.21.50.jpeg"/></div><h1 class="page-title">Resume</h1></header><div class="page-body"><p id="442e3372-4425-4e2c-9f61-4f4e60d2a2ab" class="">
+</p><blockquote id="8a6beadf-d6ea-44b5-b4a0-bb703b155eda" class="">I&#x27;m Sofiko Chkadua from Saint-Petersburg, Russia and I&#x27;m a beginner web-developer. I&#x27;am 25 and i&#x27;ve been working remotely for over 5 years and learning front-end development for over 1 year. There are a few things about my background.</blockquote><h1 id="a677c630-5431-4ddd-b6c7-f2467733fbe5" class=""><strong>☎️ Contact information</strong></h1><p id="c2a92843-a90a-47b4-99f4-7b6f6efe7db5" class="">📧  chkadua.sofiya@gmail.com</p><p id="4abdcc08-8cf2-4b16-b111-462f9da5c1d7" class="">📞  +7 (911) 838-19-88</p><p id="1c4d8a1c-cf7d-44f1-86dd-cfa55c250050" class="">🔗  <a href="http://t.me/sofiachkadua">t.me/sofiachkadua</a></p><p id="c179d1c5-038d-4ae9-aaf9-b5eafa353103" class="">🔗  <a href="https://github.com/sofiko-chkadua">https://github.com/sofiko-chkadua</a></p><p id="30be8def-cf37-4ef7-b711-7a4ef0cc79dd" class="">
+</p><p id="2fb716ad-c51b-44aa-bba0-6c31bb2a392a" class="">
+</p><p id="ae280816-4474-4b93-8b56-8e8733a3461b" class="">
+</p><p id="a9df88a8-6858-4ed6-bf8f-79fe1e269156" class="">
+</p><h1 id="f5f3834a-9c49-45e8-9e9f-68a2bebc5371" class=""><strong>👩🏻‍💻</strong> Work experience</h1><h2 id="31d8e46e-350d-49d6-b597-acfe85ce08e0" class="">1. Web-developer</h2><h3 id="18944453-b92a-48d8-9a39-2222df5a436e" class="block-color-gray">Nedvex (real estate agency)<em>, 2021 - these days</em></h3><p id="e15d0177-db67-4cb0-98aa-2f4f343fabca" class="">At these projects my main occupation is making responsive landing pages with feedback forms.</p><p id="6c8519d7-0751-4359-8d43-fa91c1e2029f" class="">
+</p><p id="a145eb07-bf1b-49c1-b8c9-dd2211f4e7a2" class="">This is the online game is called Crocodile: click on the button and try to explain random word without speech.</p><figure id="c8faf446-f0b3-4ac9-86b2-90d9b77ca747"><a href="https://crocodile.nedvex.ru/" class="block-color-purple_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Nedvex.Крокодил</div></div><div class="bookmark-href">https://crocodile.nedvex.ru/</div></div></a><figcaption>🛠  #getRandomInt #filter #responsive #javascript #BEMmetology #html5 #GitHub #css3 </figcaption></figure><p id="b6db6d17-4d9a-4c29-8892-3379c09e49e7" class="">
+</p><p id="9793422d-907c-49c4-b75c-9fb4842aba0a" class="">The main landing page with form of registration.</p><figure id="b8ec2c7e-e36f-4b2e-a073-e147a280bb30"><a href="https://nedvex.ru/" class="block-color-gray_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Главная - Nedvex</div><div class="bookmark-description">Более 1700 объектов с ежедневными обновлениями и более 50 уникальных характеристик по каждому дому. 90% агентов Сочи уже пользуются нашей платформой Узнать подробнее Вход РЕГИСТРАЦИЯ На протяжении последних 5 лет помогаем застройщикам реализовать их проекты максимально эффективно.</div></div><div class="bookmark-href"><img src="https://nedvex.ru/img/favicon.png" class="icon bookmark-icon"/>https://nedvex.ru/</div></div><img src="https://nedvex.ru/img/base.png" class="bookmark-image"/></a><figcaption>🛠    #validationforms #jQuery #javascript #BEMmetology #html5 #GitHub #css3 #sendMailPhP</figcaption></figure><p id="e1036fdd-d8d2-4114-afc1-3271606bcce3" class="">
+</p><p id="3de20256-12f2-4c4b-9398-b426f7fa9d4f" class="">The landing page with object cards and cards filter.</p><figure id="da67ed4c-0f7b-4978-b23a-202fb1d7803d"><a href="https://nedvex.ru/objects/" class="block-color-pink_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Объекты - Nedvex</div><div class="bookmark-description">Nedvex Group - оператор недвижимости в Сочи</div></div><div class="bookmark-href"><img src="https://nedvex.ru/objects/img/favicon.png" class="icon bookmark-icon"/>https://nedvex.ru/objects/</div></div></a><figcaption>🛠    #validationforms #jQuery #javascript #BEMmetology #html5 #GitHub #css3 #sendMailPhP</figcaption></figure><p id="32069ca2-01fa-4806-94e2-3c328ec94031" class="">
+</p><p id="4b2a43c5-4b26-4a35-9655-af3448a5c005" class="">The landing page with feedback form.</p><figure id="d177a9d2-4a4d-46f6-8289-304d9bc4200c"><a href="https://nedvex.ru/zastroishikam/" class="block-color-brown_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Застройщикам - Nedvex</div><div class="bookmark-description">Застройщикам - Nedvex 3 способа реализации объекта Чем грозит непроработанная стратегия продвижения вашего объекта? 5 кейсов Nedvex Consulting по реализации объектов в Сочи Почему вы теряете 50-80%прибыли каждый месяц?</div></div><div class="bookmark-href"><img src="https://nedvex.ru/zastroishikam/img/favicon.png" class="icon bookmark-icon"/>https://nedvex.ru/zastroishikam/</div></div><img src="https://nedvex.ru/zastroishikam/img/presa.png" class="bookmark-image"/></a><figcaption>🛠    #validationforms #jQuery #javascript #BEMmetology #html5 #GitHub #css3 #sendMailPhP</figcaption></figure><p id="a7d8aeb0-84df-48b6-8883-e213ad233d45" class="">
+</p><p id="b777d6de-3217-484c-bffb-5e26647b65ba" class="">The landing page with job cards and cards filter.</p><figure id="9f90955c-6e2c-4a5b-8043-230e0edefaa9"><a href="https://nedvex.ru/job/" class="block-color-orange_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Все вакансии - Nedvex</div><div class="bookmark-description">Мы ценим людей, нацеленных на результат и с позитивным взглядом на жизнь, тех, кто готов обучаться, расти и брать ответственность на себя. Если вы готовы добиваться поставленных целей вместе с нами, будем рады видеть вас в нашей команде Все вакансии Загрузить еще Скачать</div></div><div class="bookmark-href"><img src="https://nedvex.ru/job/img/favicon.png" class="icon bookmark-icon"/>https://nedvex.ru/job/</div></div><img src="https://nedvex.ru/job/img/ceo.png" class="bookmark-image"/></a><figcaption>🛠    #validationforms #jQuery #javascript #BEMmetology #html5 #GitHub #css3 #sendMailPhP</figcaption></figure><p id="450997d2-9241-4f82-bec5-80317e311dec" class="">The landing page of vacancy and feedback form.</p><figure id="a97f825a-d28c-44a0-9518-dd6c2c1d34ab"><a href="https://nedvex.ru/job/supplyspecialist/" class="block-color-yellow_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Специалист по снабжению - Nedvex</div><div class="bookmark-description">Назад ко всем вакансиям опыт работы снабженцем комплектовщиком в гостиницах!</div></div><div class="bookmark-href"><img src="https://nedvex.ru/img/favicon.png" class="icon bookmark-icon"/>https://nedvex.ru/job/supplyspecialist/</div></div><img src="https://nedvex.ru/img/logo.png" class="bookmark-image"/></a><figcaption>🛠    #validationforms #jQuery #javascript #BEMmetology #html5 #GitHub #css3 #sendMailPhP</figcaption></figure><p id="447ec9a9-ce41-4578-8b2a-d29b64bd47a3" class="">
+</p><p id="7d8fb40c-371e-4fbc-b7de-ef83eefbe75f" class="">
+</p><p id="7699402a-83ea-4f77-9a6b-516e06aca810" class="">
+</p><p id="1cfe0207-bef2-440d-9984-23673d024b8b" class="">
+</p><p id="83598866-0532-4f97-b312-6458e2a4a82e" class="">
+</p><p id="992abc4f-3894-421a-b0d6-630069650eaa" class="">
+</p><p id="b5d6920f-896f-4f8d-a548-477a47cec960" class="">
+</p><p id="2eb539bf-7927-409a-bbb4-a83f811248ce" class="">
+</p><p id="f233cf81-25a8-4203-9bc5-b3097d07a7aa" class="">
+</p><p id="d70de888-7197-4f4b-9185-78c10cb7bb06" class="">The landing page with sliders and feedback form.</p><figure id="8e57e1ea-0b78-42b3-a951-eb858bdaa221"><a href="https://nedvex.ru/development/" class="block-color-teal_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Девелопмент - Nedvex</div><div class="bookmark-description">Бывший санаторий СССР превращается в уникальный комплекс бизнес-класса. Над реконструкцией зданий работают лучшие команды архитекторов и дизайнеров в России: Wall, Golden Heads и Dba Group Сдача проекта в 4 квартале 2021 Пансионат Весна в Курортном Городке Адлерского района Сочи будет перестроен в отель бизнес-класса с территорией 7 гектаров и инфраструктурой уровня 5* под управлением международного отельного оператора.</div></div><div class="bookmark-href"><img src="https://nedvex.ru/development/img/favicon.png" class="icon bookmark-icon"/>https://nedvex.ru/development/</div></div><img src="https://nedvex.ru/development/img/moneafter-min.jpg" class="bookmark-image"/></a><figcaption>🛠    #validationforms #jQuery #javascript #BEMmetology #html5 #GitHub #css3 #sendMailPhP</figcaption></figure><p id="4dd3a517-62fb-4282-8307-749d5c065ff7" class="">
+</p><p id="e412cecf-dc6b-4f47-b77e-58a28599a350" class="">The small digest with image gallery.</p><figure id="848fbdf7-2393-46cc-b7e8-6eaedba7dc00"><a href="https://news.nedvex.ru/vesna/" class="block-color-blue_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">&quot;Vesna&quot; в Сочи - Дайджест новостей</div><div class="bookmark-description">Для создания комфортной городской среды и инфраструктуры обсуждаем мастер‑план территории с отельером. Работаем над визуальной частью: мы остановились на пред финальном варианте концепции фасада, обсуждаем материалы и цвета с одним из наших подрядчиков: AHR ARCHITECTS ‑ это архитектурная компания, основанная в 1865 году, входит в топ‑5 в Англии.</div></div><div class="bookmark-href">https://news.nedvex.ru/vesna/</div></div><img src="https://news.nedvex.ru/vesna/img/mone1.jpg" class="bookmark-image"/></a><figcaption>🛠    #validationforms #jQuery #javascript #BEMmetology #html5 #GitHub #css3 #sendMailPhP</figcaption></figure><p id="5b02c70f-34af-4fa5-90d4-8f8761fda58e" class="">
+</p><p id="48696356-080f-44ea-8297-3faf961d022a" class="">The landing page with sliders, quiz, parallax and feedback form.</p><figure id="cc885819-d729-47cc-a905-8e4af56bb587"><a href="https://grandpark.nedvex.ru/" class="block-color-pink_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Grand Park - Официальный сайт застройщика</div><div class="bookmark-description">В апартаментах предусмотрены современная система шумоизоляции, светоотражающие окна и консьерж служба для повседневных задач от вызова такси до генеральной уборки. А ограниченное количество апартаментов подчеркивает их эксклюзивность.</div></div><div class="bookmark-href"><img src="https://grandpark.nedvex.ru/img/favicon.png" class="icon bookmark-icon"/>https://grandpark.nedvex.ru/</div></div><img src="https://grandpark.nedvex.ru/img/quiz.png" class="bookmark-image"/></a><figcaption>🛠    #validationforms #jQuery #javascript #BEMmetology #html5 #GitHub #css3 #sendMailPhP</figcaption></figure><p id="59b298b3-f76e-40bb-865e-6cf1ea73c008" class=""> </p><h2 id="6e2b3334-17c9-4e76-ad15-de5df7b00a89" class="">2. Tilda web-developer </h2><h3 id="a4b97553-4e0e-4479-b164-ab7ecfa3d21d" class="block-color-gray">Supporting websites of stand up comedians (Tilda, just support — websites are created by other developers)</h3><p id="1d01ca05-1018-498e-a62c-a8a888ab95d9" class="">
+</p><p id="fe2b0568-7c7b-4f52-afa3-8bf9aab1cc7b" class="">Making zero blocks and editing content.</p><figure id="76b7885d-a0bb-429d-a19b-71e4ac73f601"><a href="https://chbtkv.com/" class="block-color-gray_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Евгений Чебатков</div><div class="bookmark-description">Официальный сайт Евгения Чебаткова</div></div><div class="bookmark-href"><img src="https://static.tildacdn.com/tild3837-6666-4931-a235-623364343134/favicon.ico" class="icon bookmark-icon"/>https://chbtkv.com/</div></div></a><figcaption>🛠  #tilda  #zeroblock</figcaption></figure><p id="bc6a8376-9b27-487b-9863-e022339a1458" class="">Making zero blocks and editing content.</p><figure id="347bd555-d164-4c86-a61a-c593779e5f36"><a href="https://orlovsergey.ru/" class="block-color-brown_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Сергей Орлов - Stand Up комик</div><div class="bookmark-description">Официальный сайт. Расписание гастролей, билеты на концерты, букинг.</div></div><div class="bookmark-href"><img src="https://static.tildacdn.com/tild3736-6561-4737-a433-316136636438/sergorlv_ytb_prvw_2.ico" class="icon bookmark-icon"/>https://orlovsergey.ru/</div></div><img src="https://static.tildacdn.com/tild3766-6438-4131-b537-666562373234/2020-02-04_21-53-41.png" class="bookmark-image"/></a><figcaption>🛠 #tilda  #zeroblock</figcaption></figure><p id="0e750a00-9e63-4176-b05a-e294209a1f40" class="">
+</p><p id="3bcd379f-f425-4f46-8346-92820ada4d6d" class="">
+</p><h2 id="fcd9a2b1-88d3-42ab-a34e-7a52deeda543" class="">3. Pet-projects</h2><h3 id="cef63216-75f7-4340-975b-c16f8bbe8e6a" class="block-color-gray">Nedvex<em>, 2021 - these days</em></h3><p id="6130baf9-86f5-43a9-9e2a-eb7f75b8c872" class="">That is my own webpage with my photocards you are able to like or delete.</p><figure id="6ff9a242-75e3-481a-812c-cf920c79e6a7"><a href="https://sofiko-chkadua.github.io/sofiastravel/public/index.html" class="block-color-gray_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Sofia Chkadua</div></div><div class="bookmark-href">https://sofiko-chkadua.github.io/sofiastravel/public/index.html</div></div></a><figcaption>🛠   #github #js #webpack #css3 #html5 </figcaption></figure><p id="046f05dc-f8cd-4a7f-a564-57925e3081b6" class="">That is the small responsive landing page with repeating blocks.</p><figure id="87545594-2dd4-497a-9642-318483621103"><a href="https://sofiko-chkadua.github.io/russiatravel/" class="block-color-brown_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Russia</div><div class="bookmark-description">Сибирь заканчивается не на Урале, а в Карелии: образующая тайгу сибирская лиственница не растёт западнее Водлозера. Зато здесь она вымахивает на 30 метров - леса карельских национальных парков из-за непроходимых болот никогда не знали топора. Некоторым соснам уже больше чем полтысячелетия. Прикоснитесь к живому существу, видевшему солнце раньше, чем увидал его Иван Грозный.</div></div><div class="bookmark-href">https://sofiko-chkadua.github.io/russiatravel/</div></div><img src="https://sofiko-chkadua.github.io/russiatravel/images/imagekarelia.png" class="bookmark-image"/></a><figcaption>🛠   #github #flexbox #gridlayout #css3 #html5 </figcaption></figure><p id="8344d286-e2de-459b-b6d1-61f7ad225925" class=""> That online shop still being developed, but it demonstrates my practice of js/html/css coding.</p><figure id="af420760-9f95-458e-94a5-dd2bc1882357"><a href="https://perfecto.shopping/pages/calendar.html" class="block-color-blue_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Личный кабинет</div></div><div class="bookmark-href">https://perfecto.shopping/pages/calendar.html</div></div><img src="https://perfecto.shopping/image/personalphoto.jpg" class="bookmark-image"/></a><figcaption>🛠   #github #flexbox #css3 #html5 </figcaption></figure><p id="34d399af-b400-4928-a87f-229d3afd0dc2" class="">
+</p><h2 id="fea8fb2d-9b8f-42de-829e-a365bf88cf7d" class="">4. A senior technical support specialist</h2><h3 id="f6bb4364-9ddb-4832-a4bc-c1ae956932bb" class="block-color-gray"><strong>Yandex</strong><em>, 2019-2021</em></h3><p id="90b698f0-29ca-4e86-a05b-6677f662290f" class="">A senior technical specialist at Yandex Support Team (team of Voice Assistant Alice and Smart Home devices).</p><p id="e25e5082-29a4-4e68-a269-d907d1e9e418" class="">
+</p><p id="494f4289-83e5-4459-9069-b66f8e73d8b9" class="">My achievements at this job: </p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d40e0c47-026e-41d6-9b2a-178285b2b7de"><div style="font-size:1.5em"><span class="icon">🏆</span></div><div style="width:100%">«The best content manager»
+<em>It was a competition of knowledge base and mine was one of the best.</em></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="07748e60-3556-43a4-bacc-ac9edcc02ec5"><div style="font-size:1.5em"><span class="icon">🏆</span></div><div style="width:100%">«The person of the year»
+Our managers were appreciated our work results during all year and choice people with best results. So I was in list of these best workers.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8c293cf1-81c8-4093-957c-a41930f135f9"><div style="font-size:1.5em"><span class="icon">🏆</span></div><div style="width:100%">«The guardian of order»
+That achievement is about our services fails. When some of them happened we needed to react fast and pass information for our developers and calm down our users.</div></figure><p id="09a2216f-b09b-4733-b203-0361508ceb17" class="">
+</p><p id="cd2e4ec9-691e-4e14-8f44-1eb798fb60f8" class="">
+</p><hr id="d1e9a206-3983-4160-ba37-c3d33b2ff153"/><h1 id="f76b4532-0828-4ad7-95a7-3216767672d2" class="">📚 Education</h1><h2 id="1d08bf4e-96be-4523-8a87-0914f0d4af68" class=""><a href="https://training.by/#!/Training/2693?lang=ru">EPAM JavaScript Training </a> ↗️</h2><p id="7bf00e30-4421-4ed8-81d9-99b60c39e529" class="block-color-gray">February <em>2021 - May 2021</em></p><p id="87cc9df9-e119-4011-b29f-d22abdff22d1" class="">I am improving my JS skills during this training.</p><h2 id="edc284dd-ec74-4613-b32c-2773182039d4" class=""><a href="https://english4it.online/">English For Tech Junior</a> ↗️</h2><p id="1514ecff-a9ce-43f3-8b19-464ed175e4ab" class="block-color-gray">February <em>2021 - Match 2021</em></p><p id="8909b768-7d12-4d61-a7ef-f4eb31bb7471" class="">The special English course for Tech specialist.</p><h2 id="c69e3f94-f9c7-4a7b-a718-dddddf1d927c" class=""><a href="https://praktikum.yandex.ru/profile/web/">Yandex Praktikum/ HTML Academy</a> ↗️</h2><p id="b1ee3351-fac5-4867-9410-c6282aa1e115" class="block-color-gray">June <em>2020 - August 2021</em></p><p id="ee6e05d9-255c-4dd9-889b-3964467550ce" class="">Basic interactive courses for the coding practice. </p><h2 id="8654777a-1ebb-429e-ba40-23377c540b6f" class="">Learning web-developing with mentors help</h2><p id="f29dcd52-eff5-4169-ab3d-9d9c26efd7e8" class="block-color-gray">June <em>2020 - August 2021</em></p><p id="8f0b4c4b-582d-4566-bd90-c5f9580c6b05" class="">Non-official learning on my own and with mentors help. I am learning best practice of coding from senior front-end specialist.</p><h2 id="87008913-614d-4883-8ffb-800caed2514f" class=""><a href="https://en.itmo.ru/en/">ITMO University</a> ↗️</h2><p id="178080f5-e96a-41ba-983c-3eb886cf5f19" class="block-color-gray">September <em>2015 - August 2018</em></p><p id="f46a6015-26ac-4041-86b3-53b588a07036" class="">I am a Bachelor of Technology and Innovation Management.</p><p id="77c3d83d-4a8a-479d-9280-024105b239a3" class="">
+</p><p id="8056d87f-3ca1-46b5-9c21-c3db924c2feb" class="">
+</p></div></article></body></html>
